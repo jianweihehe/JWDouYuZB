@@ -11,6 +11,10 @@
 		D770C7CB1E1E208E0060EDC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D770C7C91E1E208E0060EDC3 /* Main.storyboard */; };
 		D770C7CD1E1E208E0060EDC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D770C7CC1E1E208E0060EDC3 /* Assets.xcassets */; };
 		D770C7D01E1E208E0060EDC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D770C7CE1E1E208E0060EDC3 /* LaunchScreen.storyboard */; };
+		D770C7E21E1E30090060EDC3 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D770C7E01E1E30090060EDC3 /* Home.storyboard */; };
+		D770C7E41E1E30190060EDC3 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D770C7E31E1E30190060EDC3 /* Live.storyboard */; };
+		D770C7E71E1E302A0060EDC3 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D770C7E51E1E302A0060EDC3 /* Follow.storyboard */; };
+		D770C7E91E1E30410060EDC3 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D770C7E81E1E30410060EDC3 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		D770C7CC1E1E208E0060EDC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D770C7CF1E1E208E0060EDC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D770C7D11E1E208E0060EDC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D770C7E11E1E30090060EDC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = JWDouYuZB/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
+		D770C7E31E1E30190060EDC3 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Live.storyboard; path = ../Main/Live.storyboard; sourceTree = "<group>"; };
+		D770C7E61E1E302A0060EDC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = JWDouYuZB/Base.lproj/Follow.storyboard; sourceTree = SOURCE_ROOT; };
+		D770C7E81E1E30410060EDC3 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../Main/Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +62,6 @@
 			children = (
 				D770C7D71E1E28130060EDC3 /* Classes */,
 				D770C7C51E1E208E0060EDC3 /* AppDelegate.swift */,
-				D770C7C91E1E208E0060EDC3 /* Main.storyboard */,
 				D770C7CC1E1E208E0060EDC3 /* Assets.xcassets */,
 				D770C7CE1E1E208E0060EDC3 /* LaunchScreen.storyboard */,
 				D770C7D11E1E208E0060EDC3 /* Info.plist */,
@@ -78,6 +85,7 @@
 		D770C7D81E1E28130060EDC3 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				D770C7E51E1E302A0060EDC3 /* Follow.storyboard */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -85,6 +93,7 @@
 		D770C7D91E1E28130060EDC3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D770C7E01E1E30090060EDC3 /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -92,6 +101,7 @@
 		D770C7DA1E1E28130060EDC3 /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				D770C7E31E1E30190060EDC3 /* Live.storyboard */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -99,6 +109,7 @@
 		D770C7DB1E1E28130060EDC3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D770C7C91E1E208E0060EDC3 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -106,6 +117,7 @@
 		D770C7DC1E1E28130060EDC3 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D770C7E81E1E30410060EDC3 /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -179,6 +191,10 @@
 				D770C7D01E1E208E0060EDC3 /* LaunchScreen.storyboard in Resources */,
 				D770C7CD1E1E208E0060EDC3 /* Assets.xcassets in Resources */,
 				D770C7CB1E1E208E0060EDC3 /* Main.storyboard in Resources */,
+				D770C7E41E1E30190060EDC3 /* Live.storyboard in Resources */,
+				D770C7E21E1E30090060EDC3 /* Home.storyboard in Resources */,
+				D770C7E91E1E30410060EDC3 /* Profile.storyboard in Resources */,
+				D770C7E71E1E302A0060EDC3 /* Follow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +218,7 @@
 				D770C7CA1E1E208E0060EDC3 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		D770C7CE1E1E208E0060EDC3 /* LaunchScreen.storyboard */ = {
@@ -210,6 +227,24 @@
 				D770C7CF1E1E208E0060EDC3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D770C7E01E1E30090060EDC3 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D770C7E11E1E30090060EDC3 /* Base */,
+			);
+			name = Home.storyboard;
+			path = ../Main;
+			sourceTree = "<group>";
+		};
+		D770C7E51E1E302A0060EDC3 /* Follow.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D770C7E61E1E302A0060EDC3 /* Base */,
+			);
+			name = Follow.storyboard;
+			path = ../Main;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
