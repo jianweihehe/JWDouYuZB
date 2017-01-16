@@ -71,6 +71,12 @@
                 <constraint firstItem="rlf-rN-lSu" firstAttribute="trailing" secondItem="cjP-lG-rfM" secondAttribute="trailing" constant="-5" id="ySy-Cl-h3x"/>
             </constraints>
             <size key="customSize" width="176" height="156"/>
+            <connections>
+                <outlet property="imageView" destination="cjP-lG-rfM" id="CV3-aH-kHk"/>
+                <outlet property="nickNameButton" destination="rlf-rN-lSu" id="FFV-2l-Afp"/>
+                <outlet property="readCountButton" destination="hvf-AR-epY" id="EcJ-go-Eed"/>
+                <outlet property="titleLabel" destination="fDF-sZ-Tez" id="Q4h-2D-BXk"/>
+            </connections>
             <point key="canvasLocation" x="-140" y="-42"/>
         </collectionViewCell>
     </objects>

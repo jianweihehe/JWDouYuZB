@@ -10,89 +10,102 @@ import UIKit
 
 fileprivate let itemMargin:CGFloat = 10
 fileprivate let itemWidth = (JWScreenWidth - 3 * itemMargin) * 0.5
-fileprivate let itemHeight = itemWidth * 3 / 4
+fileprivate let normalItemHeight = itemWidth * 3 / 4
+fileprivate let prettyItemHeight = itemWidth * 4 / 3
 fileprivate let headerViewHeight:CGFloat = 50
 fileprivate let normalCellID = "normalCellID"
+fileprivate let prettyCellID = "prettyCellID"
 fileprivate let headerViewID = "headerViewID"
-class CommendViewController: UIViewController {
+fileprivate let CycleViewHeight = JWScreenWidth * 3 / 8
+fileprivate let GameViewHeight:CGFloat = 90
 
-    //属性设置
-    fileprivate lazy var collectionView: UICollectionView = {[weak self] in
+class CommendViewController: BaseAnchorViewController {
     
-        //创建布局
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
-        layout.minimumLineSpacing = 0;
-        layout.minimumInteritemSpacing = itemMargin
-        layout.headerReferenceSize = CGSize(width: (self?.view.bounds.size.width)!, height: headerViewHeight)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: itemMargin, bottom: 0, right: itemMargin)
-        //创建UICollectionView
-        let collectionView = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: layout)
-        collectionView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
-        collectionView.backgroundColor = UIColor.white
-        collectionView.dataSource = self as UICollectionViewDataSource?
-        collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: normalCellID)
-        collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerViewID)
-        return collectionView
+    fileprivate lazy var commendVM: CommendViewModel = CommendViewModel()
+
+    fileprivate lazy var cycleView: CommendCycleView = {
+    
+        let cycleView = CommendCycleView.commendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -CycleViewHeight-GameViewHeight, width: JWScreenWidth, height: CycleViewHeight)
+        cycleView.backgroundColor = UIColor.red
+        return cycleView
     }()
     
+    fileprivate lazy var gameView: CommendGameView = {
+    
+        let gameView = CommendGameView.commendGameView()
+        gameView.frame = CGRect(x: 0, y: -GameViewHeight, width: JWScreenWidth, height: GameViewHeight)
+        gameView.backgroundColor = UIColor.red
+        return gameView
+    }()
     //系统回调
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupUI()
     }
 }
 
 // MARK: - 设置UI界面
 extension CommendViewController {
 
-    fileprivate func setupUI() {
+    override func setupUI() {
         
+        super.setupUI()
         view.addSubview(collectionView)
+        collectionView.addSubview(cycleView)
+        collectionView.addSubview(gameView)
+        collectionView.contentInset = UIEdgeInsets(top: CycleViewHeight+GameViewHeight, left: 0, bottom: 0, right: 0)
     }
 }
-
-// MARK: - UICollectionViewDataSource
-extension CommendViewController: UICollectionViewDataSource{
+// MARK: - 网络数据请求
+extension CommendViewController{
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 12
-    }
+    override func loadDataSource() {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        baseVM = commendVM
         
-        if section == 0 {
-            return 8
+        commendVM.requestData {
+            self.collectionView.reloadData()
+            
+            var groups = self.commendVM.anchorGropus
+            groups.removeFirst()
+            groups.removeFirst()
+            //添加更多
+            let mroeGroup = AnchorGroup()
+            mroeGroup.tag_name = "更多"
+            groups.append(mroeGroup)
+            self.gameView.groups = groups
         }
-        return 4
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: normalCellID, for: indexPath)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerViewID, for: indexPath)
-        return headerView
+        commendVM.requestCycleData {
+            
+            self.cycleView.cycleModels = self.commendVM.cycleModels
+        }
     }
 }
 
+extension CommendViewController{
 
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: prettyCellID, for: indexPath) as! CollectionPrettyCell
+            let group = baseVM.anchorGropus[indexPath.section]
+            cell.anchor = group.anchors[indexPath.row]
+            return cell
+        }else{
+        
+            return super.collectionView(collectionView, cellForItemAt: indexPath)
+        }
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
 
-
-
-
-
-
-
-
-
-
-
+            return CGSize(width: itemWidth, height: prettyItemHeight)
+        }
+        
+        return CGSize(width: itemWidth, height: normalItemHeight)
+    }
+}
 
 

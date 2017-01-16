@@ -9,10 +9,27 @@
 import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet var iconImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var moreBtn: UIButton!
+    
+    var group:AnchorGroup? {
+    
+        didSet{
+        
+            titleLabel.text = group?.tag_name
+            iconImageView.image = UIImage(named: group?.icon_name ?? "home_header_normal")
+        }
     }
     
+    
+}
+
+// MARK: - 从XIB中创建的类方法
+extension CollectionHeaderView{
+
+    class func collectionHeaderView() -> CollectionHeaderView {
+    
+        return Bundle.main.loadNibNamed("CollectionHeaderView", owner: nil, options: nil)?.first as! CollectionHeaderView
+    }
 }

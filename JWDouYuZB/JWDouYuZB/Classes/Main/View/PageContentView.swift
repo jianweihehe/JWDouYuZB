@@ -83,7 +83,6 @@ extension PageContentView: UICollectionViewDataSource{
             view.removeFromSuperview()
         }
         let childVC = contents[indexPath.item]
-        childVC.view.backgroundColor = UIColor.randomColor()
         childVC.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(childVC.view)
         return cell

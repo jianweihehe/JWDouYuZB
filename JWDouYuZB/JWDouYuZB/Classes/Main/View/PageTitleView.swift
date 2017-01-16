@@ -122,6 +122,7 @@ extension PageTitleView{
     @objc fileprivate func titleLabelClick(tapeGes:UITapGestureRecognizer) {
         //获取当前label
         guard let currentLabel = tapeGes.view as? UILabel else { return }
+        if currentLabel.tag == currentIndex { return }
         //获取之前选中Label
         let oldLabel = titleLabels[currentIndex]
         //切换文字颜色

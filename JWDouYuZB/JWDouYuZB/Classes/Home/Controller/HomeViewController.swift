@@ -29,12 +29,9 @@ class HomeViewController: UIViewController {
     
         var childVCs = [UIViewController]()
         childVCs.append(CommendViewController())
-//        for _ in 0...3 {
-//
-//            let vc = UIViewController()
-//            vc.view.backgroundColor = UIColor.randomColor()
-//            childVCs.append(vc)
-//        }
+        childVCs.append(GameViewController())
+        childVCs.append(AmuseViewController())
+        
         let pageContentView = PageContentView(frame: contentFrame, contents: childVCs, parentViewController: self!)
         pageContentView.delegate = self as PageContentViewDelegate?
         return pageContentView
