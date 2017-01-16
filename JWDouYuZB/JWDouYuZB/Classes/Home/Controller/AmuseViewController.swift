@@ -43,6 +43,7 @@ extension AmuseViewController{
         //请求数据
         amuseVM.loadAmuseData {
             
+            self.loadDataFinished()
             self.collectionView.reloadData()
             
             var tempGroups = self.amuseVM.anchorGropus

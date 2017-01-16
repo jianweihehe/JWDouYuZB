@@ -64,8 +64,8 @@ extension CommendViewController{
         baseVM = commendVM
         
         commendVM.requestData {
+            self.loadDataFinished()
             self.collectionView.reloadData()
-            
             var groups = self.commendVM.anchorGropus
             groups.removeFirst()
             groups.removeFirst()

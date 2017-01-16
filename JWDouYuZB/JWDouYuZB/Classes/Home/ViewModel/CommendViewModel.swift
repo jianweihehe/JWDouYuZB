@@ -64,7 +64,7 @@ extension CommendViewModel{
         }
         //请求游戏数据
         netWorkingGroup.enter()
-        anchorData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", pramars: parameters) { 
+        anchorData(isGroupData: true,URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", pramars: parameters) {
             
             netWorkingGroup.leave()
         }

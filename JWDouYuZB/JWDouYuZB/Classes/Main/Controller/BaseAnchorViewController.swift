@@ -18,7 +18,7 @@ fileprivate let normalCellID = "normalCellID"
 fileprivate let prettyCellID = "prettyCellID"
 fileprivate let headerViewID = "headerViewID"
 
-class BaseAnchorViewController: UIViewController {
+class BaseAnchorViewController: BaseViewController {
 
     //定义属性
     var baseVM: BaseViewModel!
@@ -57,9 +57,10 @@ class BaseAnchorViewController: UIViewController {
 // MARK: - 设置UI
 extension BaseAnchorViewController{
     
-    func setupUI() {
-        
+    override func setupUI() {
+        baseContentView = collectionView
         view.addSubview(collectionView)
+        super.setupUI()
     }
 }
 
@@ -102,17 +103,34 @@ extension BaseAnchorViewController: UICollectionViewDataSource{
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension BaseAnchorViewController:UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+// MARK: - UICollectionViewDelegateFlowLayout
+extension BaseAnchorViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        
-//        if indexPath.section == 1 {
-//            
-//            return CGSize(width: itemWidth, height: prettyItemHeight)
-//        }
-        
         return CGSize(width: itemWidth, height: normalItemHeight)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension BaseAnchorViewController: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let anchor = baseVM.anchorGropus[indexPath.section].anchors[indexPath.item]
+        
+        anchor.isVertical == 1 ? presentShowRoomVC() : pushNormalRoomVC()
+    }
+    
+    private func presentShowRoomVC() {
+    
+        let showRoomVC = RoomShowViewController()
+        self.present(showRoomVC, animated: true, completion: nil)
+    }
+    
+    private func pushNormalRoomVC() {
+    
+        let normalRoomVC = RoomNormalViewController()
+        self.navigationController?.pushViewController(normalRoomVC, animated: true)
     }
 }
 

@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         childVCs.append(CommendViewController())
         childVCs.append(GameViewController())
         childVCs.append(AmuseViewController())
-        
+        childVCs.append(FunnyViewController())
         let pageContentView = PageContentView(frame: contentFrame, contents: childVCs, parentViewController: self!)
         pageContentView.delegate = self as PageContentViewDelegate?
         return pageContentView

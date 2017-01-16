@@ -15,17 +15,24 @@ class BaseViewModel{
 
 extension BaseViewModel{
 
-    func anchorData(URLString:String, pramars:[String:Any]? = nil, finishedCallBack: @escaping ()->()) {
+    func anchorData(isGroupData:Bool,URLString:String, pramars:[String:Any]? = nil, finishedCallBack: @escaping ()->()) {
         NetWorkingTools.requestData(type: .get, URLString: URLString,parameters: pramars) { (respose) in
             // 1.获取到数据
             guard let resultDict = respose as? [String : Any] else { return }
             guard let dataArray = resultDict["data"] as? [[String : Any]] else { return }
+            if(isGroupData){
+                for dict in dataArray{
+                    
+                    self.anchorGropus.append(AnchorGroup(dict: dict))
+                }
+            }else{
             
-            for dict in dataArray{
-                
-                self.anchorGropus.append(AnchorGroup(dict: dict))
+                let group = AnchorGroup()
+                for dict in dataArray{
+                   group.anchors.append(AnchorModel(dict: dict))
+                }
+                self.anchorGropus.append(group)
             }
-            
             finishedCallBack()
         }
     }

@@ -55,6 +55,12 @@
 		D796CB391E2C67C1001C3A7F /* AmuseMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D796CB381E2C67C1001C3A7F /* AmuseMenuView.xib */; };
 		D796CB3C1E2C6D58001C3A7F /* AmuseMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796CB3A1E2C6D58001C3A7F /* AmuseMenuCell.swift */; };
 		D796CB3D1E2C6D58001C3A7F /* AmuseMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D796CB3B1E2C6D58001C3A7F /* AmuseMenuCell.xib */; };
+		D796CB3F1E2C9C8C001C3A7F /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796CB3E1E2C9C8C001C3A7F /* FunnyViewController.swift */; };
+		D796CB411E2CA058001C3A7F /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796CB401E2CA058001C3A7F /* FunnyViewModel.swift */; };
+		D796CB431E2CA516001C3A7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796CB421E2CA516001C3A7F /* BaseViewController.swift */; };
+		D796CB4A1E2CACA4001C3A7F /* RoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796CB491E2CACA4001C3A7F /* RoomShowViewController.swift */; };
+		D796CB4C1E2CACC8001C3A7F /* RoomNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796CB4B1E2CACC8001C3A7F /* RoomNormalViewController.swift */; };
+		D796CB4E1E2CB10A001C3A7F /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D796CB4D1E2CB10A001C3A7F /* CustomNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +116,12 @@
 		D796CB381E2C67C1001C3A7F /* AmuseMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmuseMenuView.xib; sourceTree = "<group>"; };
 		D796CB3A1E2C6D58001C3A7F /* AmuseMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseMenuCell.swift; sourceTree = "<group>"; };
 		D796CB3B1E2C6D58001C3A7F /* AmuseMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmuseMenuCell.xib; sourceTree = "<group>"; };
+		D796CB3E1E2C9C8C001C3A7F /* FunnyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
+		D796CB401E2CA058001C3A7F /* FunnyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
+		D796CB421E2CA516001C3A7F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D796CB491E2CACA4001C3A7F /* RoomShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomShowViewController.swift; sourceTree = "<group>"; };
+		D796CB4B1E2CACC8001C3A7F /* RoomNormalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomNormalViewController.swift; sourceTree = "<group>"; };
+		D796CB4D1E2CB10A001C3A7F /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +191,7 @@
 				D770C7DA1E1E28130060EDC3 /* Live */,
 				D770C7D81E1E28130060EDC3 /* Follow */,
 				D770C7DC1E1E28130060EDC3 /* Profile */,
+				D796CB441E2CAC7F001C3A7F /* Room */,
 				D770C7DD1E1E28130060EDC3 /* Tools */,
 			);
 			path = Classes;
@@ -279,6 +292,7 @@
 				D770C7FD1E1F7E570060EDC3 /* CommendViewController.swift */,
 				D796CB251E260B4E001C3A7F /* GameViewController.swift */,
 				D796CB2D1E273131001C3A7F /* AmuseViewController.swift */,
+				D796CB3E1E2C9C8C001C3A7F /* FunnyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +301,8 @@
 			isa = PBXGroup;
 			children = (
 				D796CB341E2873CA001C3A7F /* BaseAnchorViewController.swift */,
+				D796CB421E2CA516001C3A7F /* BaseViewController.swift */,
+				D796CB4D1E2CB10A001C3A7F /* CustomNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,6 +346,7 @@
 				D796CB0B1E236994001C3A7F /* CommendViewModel.swift */,
 				D796CB271E261146001C3A7F /* GameViewModel.swift */,
 				D796CB2F1E275803001C3A7F /* AmuseViewModel.swift */,
+				D796CB401E2CA058001C3A7F /* FunnyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -338,6 +355,47 @@
 			isa = PBXGroup;
 			children = (
 				D796CB321E287177001C3A7F /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D796CB441E2CAC7F001C3A7F /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				D796CB451E2CAC7F001C3A7F /* Controller */,
+				D796CB461E2CAC7F001C3A7F /* Model */,
+				D796CB471E2CAC7F001C3A7F /* View */,
+				D796CB481E2CAC7F001C3A7F /* ViewModel */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		D796CB451E2CAC7F001C3A7F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D796CB491E2CACA4001C3A7F /* RoomShowViewController.swift */,
+				D796CB4B1E2CACC8001C3A7F /* RoomNormalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D796CB461E2CAC7F001C3A7F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D796CB471E2CAC7F001C3A7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D796CB481E2CAC7F001C3A7F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -479,10 +537,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D770C8011E1F88800060EDC3 /* CollectionHeaderView.swift in Sources */,
+				D796CB4A1E2CACA4001C3A7F /* RoomShowViewController.swift in Sources */,
+				D796CB4C1E2CACC8001C3A7F /* RoomNormalViewController.swift in Sources */,
+				D796CB411E2CA058001C3A7F /* FunnyViewModel.swift in Sources */,
 				D770C7FE1E1F7E570060EDC3 /* CommendViewController.swift in Sources */,
 				D770C7FC1E1E4F0C0060EDC3 /* UIColor+Extension.swift in Sources */,
+				D796CB3F1E2C9C8C001C3A7F /* FunnyViewController.swift in Sources */,
 				D770C7F61E1E3D3D0060EDC3 /* PageTitleView.swift in Sources */,
 				D770C8051E1F8D570060EDC3 /* CollectionNormalCell.swift in Sources */,
+				D796CB431E2CA516001C3A7F /* BaseViewController.swift in Sources */,
 				D796CB2A1E261225001C3A7F /* GameModel.swift in Sources */,
 				D796CB091E2360F7001C3A7F /* NetWorkingTools.swift in Sources */,
 				D796CB0E1E236C12001C3A7F /* NSDate+Extension.swift in Sources */,
@@ -491,6 +554,7 @@
 				D796CB141E24BAFA001C3A7F /* CommendCycleView.swift in Sources */,
 				D796CB2C1E261685001C3A7F /* BaseGameModel.swift in Sources */,
 				D796CB061E2329D7001C3A7F /* CollectionPrettyCell.swift in Sources */,
+				D796CB4E1E2CB10A001C3A7F /* CustomNavigationController.swift in Sources */,
 				D796CB281E261146001C3A7F /* GameViewModel.swift in Sources */,
 				D796CB121E237737001C3A7F /* AnchorModel.swift in Sources */,
 				D770C7FA1E1E4B6D0060EDC3 /* PageContentView.swift in Sources */,
